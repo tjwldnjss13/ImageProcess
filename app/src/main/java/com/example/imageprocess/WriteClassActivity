@@ -1,0 +1,113 @@
+package com.example.imageprocess;
+
+import android.support.v7.app.AppCompatActivity;
+
+public class WriteClassActivity extends AppCompatActivity {
+
+//    //이미지뷰(img1) 클릭 시 dialog 생성
+//    private void makeDialog(){
+//        AlertDialog.Builder alt_bld = new AlertDialog.Builder(WriteClassActivity.this,R.style.MyAlertDialogStyle);
+//        alt_bld.setTitle("사진 업로드").setIcon(R.drawable.check_dialog_64).setCancelable(
+//                false).setPositiveButton("사진촬영",
+//                new DialogInterface.OnClickListener() {
+//                    public void onClick(DialogInterface dialog, int id) {
+//                        Log.v("알림", "다이얼로그 > 사진촬영 선택");
+//                        // 사진 촬영 클릭
+//                        takePhoto();
+//                    }
+//                }).setNeutralButton("앨범선택",
+//                new DialogInterface.OnClickListener() {
+//                    public void onClick(DialogInterface dialogInterface, int id) {
+//                        Log.v("알림", "다이얼로그 > 앨범선택 선택");
+//                        //앨범에서 선택
+//                        selectAlbum();
+//                    }
+//                }).setNegativeButton("취소   ",
+//                new DialogInterface.OnClickListener() {
+//                    public void onClick(DialogInterface dialog, int id) {
+//                        Log.v("알림", "다이얼로그 > 취소 선택");
+//                        // 취소 클릭. dialog 닫기.
+//                        dialog.cancel();
+//                    }
+//                });
+//        AlertDialog alert = alt_bld.create();
+//        alert.show();
+//    }
+//
+//    //앨범 선택 클릭
+//    public void selectAlbum(){
+//        //앨범 열기
+//        Intent intent = new Intent(Intent.ACTION_PICK);
+//        intent.setType(MediaStore.Images.Media.CONTENT_TYPE);
+//
+//        intent.setType("image/*");
+//
+//        startActivityForResult(intent, FROM_ALBUM);
+//    }
+//
+//
+//
+//    //사진 찍기 클릭
+//    public void takePhoto(){
+//        // 촬영 후 이미지 가져옴
+//        String state = Environment.getExternalStorageState();
+//
+//        if(Environment.MEDIA_MOUNTED.equals(state)){
+//            Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+//            if(intent.resolveActivity(getPackageManager())!=null){
+//                File photoFile = null;
+//                try{
+//                    photoFile = createImageFile();
+//                }catch (IOException e){
+//                    e.printStackTrace();
+//                }
+//                if(photoFile!=null){
+//                    Uri providerURI = FileProvider.getUriForFile(this,getPackageName(),photoFile);
+//                    imgUri = providerURI;
+//                    intent.putExtra(android.provider.MediaStore.EXTRA_OUTPUT, providerURI);
+//                    startActivityForResult(intent, FROM_CAMERA);
+//                }
+//            }
+//        }else{
+//            Log.v("알림", "저장공간에 접근 불가능");
+//            return;
+//        }
+//
+//    }
+//
+//
+//    protected void onClick(Bundle savedInstanceState) {
+//         /*
+//        권한 구해서 카메라/앨범 접근
+//         */
+//        setContentView(R.layout.activity_write_class);
+//
+//        //TedPermission 라이브러리 -> 카메라 권한 획득
+//        PermissionListener permissionlistener = new PermissionListener() {
+//            @Override
+//            public void onPermissionGranted() {
+//                Toast.makeText(WriteClassActivity.this, "Permission Granted", Toast.LENGTH_SHORT).show();
+//            }
+//
+//            @Override
+//            public void onPermissionDenied(ArrayList<String> deniedPermissions) {
+//                Toast.makeText(WriteClassActivity.this, "Permission Denied\n" + deniedPermissions.toString(), Toast.LENGTH_SHORT).show();
+//            }
+//        };
+//        new TedPermission(this)
+//                .setPermissionListener(permissionlistener)
+//                .setDeniedMessage("If you reject permission,you can not use this service\n\nPlease turn on permissions at [Setting] > [Permission] ")
+//                .setPermissions(Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.CAMERA)
+//                .check();
+//
+//        img1 = findViewById(R.id.img1);
+//
+//        //앨범선택, 사진촬영, 취소 다이얼로그 생성
+//        img1.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                makeDialog();
+//            }
+//        });
+//    }
+}
